@@ -1,12 +1,12 @@
 import streamlit
-from langchain_community.llms import ollama
+from langchain_ollama import OllamaLLM
 import time
 
 # App title
 streamlit.set_page_config(page_title="Python Code Assistant")
 with streamlit.sidebar:streamlit.title("Python Code Assistant")
 
-llm = ollama.Ollama(model="fang")
+llm = OllamaLLM(model="fang")
 
 # Store llm generated messages.
 if "messages" not in streamlit.session_state.keys():
